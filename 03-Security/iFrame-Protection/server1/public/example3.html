@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickjacking Example</title>
+</head>
+<body>
+
+    <h1>Render google in i frame</h1>
+    <p>
+        Click the button below to see a simple clickjacking demonstration.
+    </p>
+
+    <iframe src="http://google.co.in" ></iframe>
+
+    <button id="overlay-button">Click Me!</button>
+
+   
+
+    <script>
+        // Simulate a clickjacking attack by overlaying the button
+        document
+            .getElementById("overlay-button")
+            .addEventListener("click", () => {
+                alert("Button clicked!");
+            });
+    </script>
+
+</body>
+</html>
